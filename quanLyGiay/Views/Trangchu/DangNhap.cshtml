@@ -1,0 +1,25 @@
+﻿@model quanLyGiay.Models.DangNhap
+
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Đăng nhập</h2>
+
+<div style="display: flex; flex-direction: column; justify-content: space-evenly; padding: 13%;">
+    <div class="form-group" style="margin-bottom: 20px;">
+        <label> Tên tài khoản của nhân viên </label>
+        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group" style="margin-bottom: 20px; display:contents">
+        <label> Mật khẩu của nhân viên </label>
+        <input type="password"/>
+        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+    </div>
+
+    
+    <input type="submit" value="Đăng nhập" class="btn-success" style="margin-top:10px"/>
+</div>
